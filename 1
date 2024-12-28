@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Динамічні сторінки товарів</title>
+  <link rel="stylesheet" href="./slyte.css" />
+  <link rel="stylesheet" href="./store.json" />
+
+ 
+</head>
+<body>
+  <div id="details-info">Logika</div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const cardId = params.get("id");
+            console.log("id", cardId)
+            const cardDetailsContainer = document.getElementById("details-info");
+            const cardData = {
+    MANTO: {
+      title: "Футболка MANTO GYM 2.0 черная",
+      description:
+       "MANTO x Томаш Пенчак 100% хлопок Отпечатки, выполненные методом трафаретной печати Жаккардовая вставка MANTO на рукаве. Удобный крой",
+       image: [
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_2.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_3.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_6.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_5.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_4.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_7.jpg",
+         "https://www.mantoshop.pl/pol_pl_MANTO-t-shirt-GYM-2-0-czarny-2614_1.png",
+       ],
+       price: "$205.99",
+       sizes: ["Small","Medium","Large"],
+       reviews: [`Спортивная футболка MANTO GYM 2.0 (черная) создана для максимального комфорта в любых условиях. Дышащий материал быстро отводит влагу, а плотная ткань гарантирует долговечность. Универсальный черный цвет и аккуратный крой делают ее незаменимой частью спортивного гардероба.`],
+       
+      },
+      TECH: {
+        title: "Спортивная одежда Nike Толстовка на молнии",
+        description:
+        "Материал : 53% хлопок, 47% полиэстер.Структура/тип материала : Спортивный костюмСоветы по уходу : Машинная стирка при 30°C.",
+        image: [
+           "https://img01.ztat.net/article/spp-media-p1/10e9cc3e87f347f0b834647b17a05c3c/c507032ee5b74b70b2c100632572c317.jpg?imwidth=1800&filter=packshot",
+           "https://img01.ztat.net/article/spp-media-p1/de50525901944a999fc2c937cd2c6cbb/afc092e7ee9d4cb4ae9d821918fba5da.jpg?imwidth=1800",
+           "https://img01.ztat.net/article/spp-media-p1/d031618042a14c9882aa5f6ef9b26c49/d86c9620371f4054af63f6117394efd9.jpg?imwidth=1800",
+        ],
+        price: "$249.99",
+        sizes: ["Small","Medium","Large"],
+        reviews:[`Толстовка Nike на молнии – воплощение комфорта и стиля. Легкий и мягкий материал обеспечивает тепло и комфорт в прохладную погоду, а удобная застежка-молния позволяет легко надевать и снимать. Идеально подходит для тренировок и повседневной носки.`],
+
+      },
+      Nike: {
+        title:"Мужское обув Nike Air Max Plus",
+        description:
+        "Nike Air Max Plus «Яркий керамический тур желтого цвета»",
+        image: [
+         "https://warsawsneakerstore.com/storage/media/f1000/2024/nike/234240/nike-air-max-plus-bright-ceramic-tour-yellow-hf0552-001-671b45420b54d.webp",
+         "https://warsawsneakerstore.com/storage/media/f1000/2024/nike/234240/nike-air-max-plus-bright-ceramic-tour-yellow-hf0552-001-671b45420b5d5.webp",
+         "https://warsawsneakerstore.com/storage/media/f1000/2024/nike/234240/nike-air-max-plus-bright-ceramic-tour-yellow-hf0552-001-671b45420b60f.webp",
+         "https://warsawsneakerstore.com/storage/media/f1000/2024/nike/234240/nike-air-max-plus-bright-ceramic-tour-yellow-hf0552-001-671b45420b646.webp",
+         "https://warsawsneakerstore.com/storage/media/f1000/2024/nike/234240/nike-air-max-plus-bright-ceramic-tour-yellow-hf0552-001-671b45420b67d.webp",
+        ],
+        price: "$249.99",
+        sizes: ["42,5","44,0","45,0","46,0]"],
+        reviews: [`Nike Air Max Plus «Bright Ceramic Tour Yellow» — описание товара Приготовьтесь к приключениям с Nike Air Max Plus «Bright Ceramic Tour Yellow» — культовой моделью, которая уже много лет радует своим неповторимым стилем и комфортом. Эта уникальная модель, созданная в 1998 году Шоном Макдауэллом, вдохновлена ​​красотой природы и закатами на берегу океана и привнесет свежую энергию в вашу коллекцию кроссовок. Nike Air Max Plus получил признание благодаря инновационной технологии Tuned Air, обеспечивающей превосходную амортизацию и поддержку при каждом шаге. Новая огненная версия этих кроссовок, являющаяся переизданием культовой цветовой гаммы Tiger, представляет цветовую палитру, вдохновленную ранними закатами и поздними кострами под звездами. Градиентные оттенки Bright Ceramic, Tour Yellow и Pimento плавно перетекают друг в друга, создавая динамичный и привлекательный эффект. Дымчато-черные акценты добавляют глубины, а чистая белая межподошва подчеркивает современный вид дизайна. Не только внешний вид делает Nike Air Max Plus «Bright Ceramic Tour Yellow» уникальными. Благодаря вставке Max Air в пятке и амортизации Nike Air в передней части стопы эти туфли обеспечивают легендарную гибкость и комфорт, которые вы оцените во время повседневной деятельности. Такое сочетание стиля и функциональности превращает каждый шаг в настоящее удовольствие.
+
+         "Цвета  - черный, желтый, оранжевый.""
+
+        "Верх  - синтетический материал, текстильный материал.""
+
+        "Подкладка  - текстильный материал.""
+
+        "Подошва  - резина"
+
+        "Низкий профиль"
+        "Технология Эйр Макс"
+        "Технология Nike Air"
+        "Резиновая подошва обеспечивает сцепление"
+        `],
+        },
+      STONE: {
+        title:"Толстовка STONE ISLAND",
+        description: 
+        "Синяя толстовка с принтом тай-дай. Модель свободного кроя сшита из хлопкового джерси. Дизайн дополняют объемный капюшон и длинные рукава. Декор в виде нашивки с лого.",
+        image: [
+         "https://www.keng.ru/upload/resize_cache/iblock/05b/525_525_1/djeyvh3hr2kimzwcd39akrpkl2geombe.jpg",
+         "https://www.keng.ru/upload/resize_cache/iblock/182/525_525_1/6drt57i08s6kv50vkjeqck1713lbu3lb.jpg",
+         "https://www.keng.ru/upload/resize_cache/iblock/818/525_525_1/pw3xmozx153p4yrbs2u5wteasjta6ueg.jpg",
+        ],
+        price: "$220.99",
+        sizes: ["Small","Medium","Large"],
+        reviews: [`Синяя толстовка с принтом тай-дай. Модель свободного кроя сшита из хлопкового джерси. Дизайн дополняют объемный капюшон и длинные рукава. Декор в виде нашивки с лого.`],
+
+      },
+        }
+        if (cardData[cardId] ) {
+        const card = cardData[cardId];
+        const priceWithTax = parseFloat(card.price) + 20;
+       cardDetailsContainer.innerHTML = `
+       <h1>Брендовий Одяг </h1>     
+       <body>
+       <nav>
+        <ul>
+            <a class="home_btn" href="home">Home</a>
+            <li><a href="#">Мужское</a></li>
+            <li><a href="#">Женское</a></li>
+            <li><a href="#">Детское</a></li>
+            <li><a href="#">Аксессуары</a></li>
+            <li><a href="#">Спорт</a></li>
+            <li><a href="#">Бренды</a></li>
+            <li><a href="#">Скидки</a></li>
+          </ul>
+       </nav>
+       <main class='main'>
+        <div class="card">
+         <div class="images-container">
+          <div class="small-images">
+            ${card.images
+             .slice(0, 3)
+             .map ((img) =>`<img src="${img}"alt="${card.title}"/>`)
+             .join("")}
+             </div>
+             <div class="large-image">
+               <img scr="${card.images[3]}" alt="${card.title}" />
+               </div>
+               </div>
+                   <div class="details">
+                    <h1>${card.title}</h1>
+                    <p class="price">Price:$${
+                      card.price
+                      }<spawn>$${priceWithTax}</span></p>
+                       <p class="desc">${card.description}</p>
+                       <hr class="line"/>
+                       <p class="color_title">Select Colors</p>
+                       <div class="colors">
+                        <div class="colors1"></div>
+                        <div class="colors2"></div>
+                        <div class="colors3"></div>
+                       </div>
+                      <hr class="line"/>
+                      <p class="size_title">Choose Size</p>
+                      <div class="sizes">
+                        ${card.sizes
+                          .slice(0, 3)
+             .map ((img) =>`<div class="">${c}</div>`)
+             .join("")}
+             </div>
+            <hr class="line"/>
+           <button class="buy_btn">Add to Card</button>
+          </div>
+          </div>
+      </div>
+     `}
+      if (cardData[cardId]) {
+                const card = cardData[cardId];
+                cardDetailsContainer.innerHTML = `
+                <div class="container">
+                Товар:${card.title} <br/>
+                Опис товару:${card.description}
+                <img src='${card.images}'/>
+                </div>
+                `;
+            } else {
+                cardDetailsContainer.innerHTML = <h1>Товар не знайдено</h1>;
+            }
+          });
+     </script>
+     <script src="scriptn.js"></script>
+     </body>
+     </html>         
+    </script>
+</body>
+
+</html>
